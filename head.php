@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
     <title><?= $title; ?></title>
     <meta charset="utf-8">
@@ -11,3 +13,25 @@
     <?php if (isset($js)) echo "<script defer src='$js'></script>"; ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<body>
+  
+<nav>
+    <div class="navbar">
+      <div><a href="index.php">Home</a></div>
+              <div><a href="login.php">Login</a></div>
+        <div><a href="register.php">Register</a></div>
+            </div>
+
+
+
+
+  <h1>Production Index page</h1>
+  <h3 class='info'>You are in production now.</h3> 
+  <p>This is a test version of the cardgame creator</p>
+
+  
+
+  <footer>
+  This is a very simple test site fetched and running at: 2024-09-26 12:59:31  </footer>
+
+</body>
