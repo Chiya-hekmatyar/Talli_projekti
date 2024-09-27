@@ -1,6 +1,7 @@
 <?php
 $title = "Rekisteröityminen";
-include "head.php";
+$css = "rekisteroituminen.css";
+include "headers.php";
 ?>
 <body>
 <?php include "navigointi.html"; ?>

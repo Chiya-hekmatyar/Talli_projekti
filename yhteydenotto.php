@@ -2,7 +2,7 @@
 <html>
 <?php
 $title = "Yhteydenottopyyntö";
-
+$css = "yhteystiedot.css";
 include 'headers.php';
 ?>
 <body>
