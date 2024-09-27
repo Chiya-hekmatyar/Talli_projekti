@@ -1,6 +1,5 @@
 <?php
 $title = "Rekisteröityminen";
-$css = "rekisteroityminen.css";
 include "head.php";
 ?>
 <body>

@@ -2,7 +2,7 @@
 <html>
 <?php
 $title = "Myymalat";
-$css = "myymalat.css";
+
 include 'head.php';
 ?>
 <body>
