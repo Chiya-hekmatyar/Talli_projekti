@@ -6,7 +6,7 @@ include "headers.php";
 <body>
 <?php include "navigointi.html"; ?>
 <div class="content">
-<h1>Rekisteröityminen Neilikka-puutarhaliikkeen asiakkaaksi</h1>
+<h1>Rekisteröityminen Tallin koulutuksiin</h1>
 <form method="POST" class="needs-validation" novalidate>
     <fieldset>
     <legend>Henkilötiedot</legend>

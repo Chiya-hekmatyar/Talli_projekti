@@ -14,7 +14,7 @@ include 'headers.php';
   <p>Voit ottaa meihin yhteyttä</p>
   <ul>
     <li>Puhelimitse yksittäisiin myymälöihin</li>
-    <li>Sähköpostitse: <a href="mailto:asiakaspalvelu@puutarhaliikeneilikka.fi">asiakaspalvelu@puutarhaliikeneilikka.fi</a></li>
+    <li>Sähköpostitse: <a href="mailto:asiakaspalvelu@talli.fi">asiakaspalvelu@talli.fi</a></li>
     <li>Alla olevalla lomakkeella</li>
 </ul>
 
