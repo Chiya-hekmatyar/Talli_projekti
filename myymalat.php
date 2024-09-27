@@ -3,7 +3,7 @@
 <?php
 $title = "Myymalat";
 
-include 'head.php';
+include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  

@@ -3,7 +3,7 @@
 <?php
 $title = "Yhteydenottopyyntö";
 
-include 'head.php';
+include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  

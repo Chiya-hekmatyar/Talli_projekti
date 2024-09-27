@@ -5,7 +5,7 @@
 <?php
 $title = "Tuotteet";
 $css = "tuotteet.css";
-include 'head.php';
+include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
