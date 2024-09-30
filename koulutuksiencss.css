@@ -90,10 +90,13 @@ body {
     margin: 2px 0;
 }
 
+.left {
+  padding-left: 20px;
+}
 
 .form-container { 
   display: flex;                      
-  justify-content: flex-start;  /* Align items to the left */
+  justify-content: flex-start;  
   align-items: flex-start;
   padding: 20px;                    
   gap: 20px;                         

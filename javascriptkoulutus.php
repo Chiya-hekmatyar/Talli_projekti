@@ -10,10 +10,10 @@ include 'headers.php';
 
     <div class="content">
       
-        <h1>Javascript Koulutus</h1>
+        <h1 class="left">Javascript Koulutus</h1>
         
       
-        <p>
+        <p class="left">
             JavaScript on yksi tärkeimmistä ohjelmointikielistä, jota käytetään laajasti web-kehityksessä. 
             Se mahdollistaa dynaamiset ja interaktiiviset verkkosivut. Koulutuksessa opit perusasiat 
             JavaScriptistä, sekä kuinka sitä käytetään web-sovellusten kehittämiseen.
