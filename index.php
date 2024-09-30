@@ -3,7 +3,7 @@
 <?php
 $title = "Etusivu";
 $css = "site.css";
-
+include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
