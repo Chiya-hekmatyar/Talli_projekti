@@ -39,19 +39,7 @@ body {
     }
   .content {
     min-height: calc(69vh); 
-    
-}
-  .store {
-    padding-left: 20px;
-    margin-bottom: 20px;
-     
-}
-.store h2 {
-    margin-bottom: 5px;
-}
-.store p {
-    margin: 2px 0;
-}
+  }
 
 .left {
   padding-left: 20px;
