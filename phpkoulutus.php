@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html>
 <?php
-$title = "Php Koulutus";
-$css = "koulut.css";
+$title = "PHP koulutus";
+$css = "koulutuksiencss.css";
 include 'headers.php';
 ?>
 <body>
-<?php include 'navigointi.html'; ?>  
-<div class="content">
-<h2 class="store">Koulut</h2>
+    <?php include 'navigointi.html'; ?>  
 
-<div class="store">
-    <h2>Talli, Espoo</h2>
-    <p>Kivenlahdentie 10</p>
-    <p>01234 Espoo</p>
-    <p>Puh. xx-xxxxxx</p>
-    <p>Sähköposti: <a href="mailto:espoo@talli.fi">espoo@talli.fi</a></p>
-    <p>Avoinna 7-18</p>
-</div>
-</div>
-<?php include 'footer.html'; ?>
+    <div class="content">
+      
+        <h1>PHP Koulutus</h1>
+        
+      
+        <p>
+            PHP on palvelinpuolen ohjelmointikieli, jota käytetään verkkosivujen ja web-sovellusten kehittämisessä.
+            Se on erityisen tehokas dynaamisten sivustojen rakentamiseen ja vuorovaikutukseen tietokantojen kanssa.
+            PHP-koulutuksessa opit, kuinka kehitetään tehokkaita ja turvallisia web-sovelluksia.
+        </p>
+
+       
+        <div class="form-container">
+          
+            <div class="login-box">
+                <h2>Kirjaudu sisään</h2>
+                <form action="login.php" method="POST">
+                    <label for="username">Käyttäjätunnus:</label><br>
+                    <input type="text" id="username" name="username" required><br><br>
+
+                    <label for="password">Salasana:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+
+                    <button type="submit">Kirjaudu</button>
+                </form>
+            </div>
+
+            
+            <div class="register-box">
+                <h2>Rekisteröidy</h2>
+                <p>Jos sinulla ei ole vielä tiliä, rekisteröidy nyt!</p>
+                <a href="rekisteroityminen.php" class="register-link">Rekisteröidy tästä</a>
+            </div>
+        </div>
+    </div>
+
+    <?php include 'footer.html'; ?>
 </body>
 </html>
