@@ -16,27 +16,6 @@ body {
  }
 
 
-
-
-
-
-  @media screen and (min-width: 576px) {
-    nav a.icon { display: none; }
-
-    nav a:not(.icon) {
-        float: left;
-        display: block;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-      
-      nav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-    }
   .content {
     min-height: calc(69vh); 
   }
