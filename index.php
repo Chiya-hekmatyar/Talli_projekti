@@ -2,7 +2,6 @@
 <html>
 <?php
 $title = "Etusivu";
-$css = "koulutuksiencss.css";
 include 'headers.php';
 ?>
 <body>
