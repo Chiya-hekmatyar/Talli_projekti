@@ -133,3 +133,7 @@ body {
     color: #333; 
     font-size: 14px;
 }
+
+a:hover .kuvaboxi {
+  opacity: 0.9; /* Optional hover effect for the box */
+}

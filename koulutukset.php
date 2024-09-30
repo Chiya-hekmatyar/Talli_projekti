@@ -10,26 +10,35 @@ include 'headers.php';
 <div class="content">
   <h2 class="left">Koulutukset ja kurssit</h2>
   <p class="left">Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>:
-  <div class="sailio">
+<div class="sailio">
     <h2 class="left">Koulutuksia</h2>
     <div class="kuvaboxi-container">
-        <div class="kuvaboxi">
-            <img src="kuva.png" alt="Kuvan teksti">
-            <div class="kuvaus" href="koulut.php">Javascript kurssi</div>
-        </div>
-        <div class="kuvaboxi">
-            <img src="kuva2.png" alt="Kuvan teksti">
-            <div class="kuvaus">php kurssi</div>
-        </div>
-        <div class="kuvaboxi">
-            <img src="kuva3.png" alt="Kuvan teksti">
-            <div class="kuvaus">mysql kurssi</div>
-        </div>
-        <div class="kuvaboxi">
-            <img src="kuva4.png" alt="Kuvan teksti">
-            <div class="kuvaus">html ja css kurssi</div>
-        </div>
+        <a href="javascriptkoulutus.php">
+            <div class="kuvaboxi">
+                <img src="kuva.png" alt="Kuvan teksti">
+                <div class="kuvaus">Javascript kurssi</div>
+            </div>
+        </a>
+        <a href="phpkoulutus.php">
+            <div class="kuvaboxi">
+                <img src="kuva2.png" alt="Kuvan teksti">
+                <div class="kuvaus">php kurssi</div>
+            </div>
+        </a>
+        <a href="mysqlkoulutus.php">
+            <div class="kuvaboxi">
+                <img src="kuva3.png" alt="Kuvan teksti">
+                <div class="kuvaus">mysql kurssi</div>
+            </div>
+        </a>
+        <a href="htmlcsskoulutus.php">
+            <div class="kuvaboxi">
+                <img src="kuva4.png" alt="Kuvan teksti">
+                <div class="kuvaus">html ja css kurssi</div>
+            </div>
+        </a>
     </div>
+</div>
 </div>
 </div>
 <?php include 'footer.html'; ?>
