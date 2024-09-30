@@ -10,7 +10,7 @@ include 'headers.php';
 
     <div class="content">
       
-        <h1 class="left">Javascript Koulutus</h1>
+        <h1>Javascript Koulutus</h1>
         
       
         <p class="left">

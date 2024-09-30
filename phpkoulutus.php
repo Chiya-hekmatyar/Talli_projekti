@@ -13,7 +13,7 @@ include 'headers.php';
         <h1>PHP Koulutus</h1>
         
       
-        <p>
+        <p class="left">
             PHP on palvelinpuolen ohjelmointikieli, jota käytetään verkkosivujen ja web-sovellusten kehittämisessä.
             Se on erityisen tehokas dynaamisten sivustojen rakentamiseen ja vuorovaikutukseen tietokantojen kanssa.
             PHP-koulutuksessa opit, kuinka kehitetään tehokkaita ja turvallisia web-sovelluksia.

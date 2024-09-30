@@ -1,4 +1,4 @@
-const projekti = "neilikka"
+const projekti = "azuretesti"
 const myFunction = () => {
     var x = document.querySelector("nav")
     x.classList.toggle("responsive")

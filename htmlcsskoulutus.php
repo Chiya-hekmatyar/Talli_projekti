@@ -13,7 +13,7 @@ include 'headers.php';
         <h1>HTML ja CSS Koulutus</h1>
         
       
-        <p>
+        <p class="left">
             HTML (Hypertext Markup Language) on verkkosivujen rakenteen kieli, ja CSS (Cascading Style Sheets)
             on tyyliohjeiden kieli, jota käytetään verkkosivujen ulkoasun määrittämiseen. HTML ja CSS -koulutuksessa
             opit luomaan visuaalisesti houkuttelevia ja responsiivisia verkkosivuja, jotka toimivat saumattomasti eri laitteilla.

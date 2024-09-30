@@ -2,7 +2,7 @@
 <html>
 <?php
 $title = "Etusivu";
-$css = "site.css";
+$css = "koulutuksiencss.css";
 include 'headers.php';
 ?>
 <body>

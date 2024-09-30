@@ -13,7 +13,7 @@ include 'headers.php';
         <h1>MySql Koulutus</h1>
         
       
-        <p>
+        <p class="left">
             MySQL on avoimen lähdekoodin tietokantajärjestelmä, joka on erityisen suosittu web-kehityksessä.
             Se tarjoaa tehokkaan tavan hallita ja tallentaa suuria määriä tietoa. MySQL-koulutuksessa opit,
             kuinka suunnitella tietokantoja, suorittaa kyselyitä ja hallita tietokantoja.
