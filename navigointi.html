@@ -1,18 +1,15 @@
 <nav class="">
     <a href="index.php">Etusivu</a>
     
-    <div class="btn-group">
-        <button class="btn btn-secondary btn-sm" type="button" href="koulutukset.php">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" href="koulutukset.php">
           Koulutukset
         </button>
-        <button type="button" class="btn btn-sm btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-          <span class="visually-hidden">Toggle Dropdown</span>
-        </button>
         <ul class="dropdown-menu">
-            <a href="javascriptkoulutus.php">JavaScript Koulutus</a>
-            <a href="phpkoulutus.php">PHP Koulutus</a>
-            <a href="mysqlkoulutus.php">MySQL Koulutus</a>
-            <a href="htmlcsskoulutus.php">HTML & CSS Koulutus</a>
+        <li><button class="dropdown-item" type="button"href="javascriptkoulutus.php">JavaScript Koulutus</button></li>
+        <li><button class="dropdown-item" type="button" href="phpkoulutus.php">PHP Koulutus</button></li>
+        <li><button class="dropdown-item" type="button"href="mysqlkoulutus.php">MySQL Koulutus</button></li>
+        <li><button class="dropdown-item" type="button" href="htmlcsskoulutus.php">HTML & CSS Koulutus</button></li>
         </ul>
     </div>
     <a href="yhteydenotto.php">Ota yhteyttä</a>
