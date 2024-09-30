@@ -2,7 +2,6 @@
 <html>
 <?php
 $title = "Etusivu";
-$css = "site.css";
 include 'headers.php';
 ?>
 <body>
