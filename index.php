@@ -2,7 +2,8 @@
 <html>
 <?php
 $title = "Etusivu";
-include 'headers.php';
+$css = "site.css";
+
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
