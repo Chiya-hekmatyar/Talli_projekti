@@ -15,7 +15,7 @@ include 'headers.php';
     <div class="kuvaboxi-container">
         <div class="kuvaboxi">
             <img src="kuva.png" alt="Kuvan teksti">
-            <div class="kuvaus">Javascript kurssi</div>
+            <div class="kuvaus" href="koulut.php">Javascript kurssi</div>
         </div>
         <div class="kuvaboxi">
             <img src="kuva2.png" alt="Kuvan teksti">
