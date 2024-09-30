@@ -78,7 +78,7 @@ legend {
   margin-bottom: 0;
 }
 
-/* For larger screens */
+
 @media screen and (min-width: 576px) {
   nav {
     display: flex;
@@ -100,7 +100,7 @@ legend {
   display: inline-block;
 }
 
-/* Initially hidden dropdown content */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -121,11 +121,6 @@ legend {
   background-color: #f1f1f1;
 }
 
-/* Remove hover behavior for opening dropdown */
-.dropdown:hover .dropdown-content {
-  display: none;
-}
-
 .icon {
   display: none;
 }
@@ -136,4 +131,3 @@ legend {
   margin-left: 5px;
   font-size: 12px;
 }
-

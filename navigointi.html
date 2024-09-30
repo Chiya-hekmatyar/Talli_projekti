@@ -2,9 +2,9 @@
     <a href="index.php">Etusivu</a>
 
 
-    <div class="dropdown">
-        <a href="koulutukset.php" class="dropdown-toggle">Koulutukset &#9662;</a> <!-- Dropdown pointer -->
-        <div class="dropdown-content">
+    <a href="koulutukset.php" class="dropdown-toggle">Koulutukset</a>
+        <span class="dropdown-toggle" onclick="toggleDropdown()">&#9662;</span>
+        <div class="dropdown-content" id="dropdown" style="display: none;">
             <a href="javascriptkoulutus.php">JavaScript Koulutus</a>
             <a href="phpkoulutus.php">PHP Koulutus</a>
             <a href="mysqlkoulutus.php">MySQL Koulutus</a>
