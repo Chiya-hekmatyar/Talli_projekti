@@ -7,8 +7,8 @@ include "headers.php";
 <?php include "navigointi.html"; ?>
 <div class="content">
 <h1>Rekisteröityminen Tallin koulutuksiin</h1>
-<form method="POST" class="needs-validation" novalidate>
-    <fieldset>
+<form action="sendmail.php" method="POST" class="needs-validation" novalidate>
+    
     <legend>Henkilötiedot</legend>
     <div class="col mb-2">
     <label for="nimi" class="label-responsive form-label-sm">Nimi:</label>
@@ -377,36 +377,9 @@ include "headers.php";
     <div class="invalid-feedback">Toista salasana</div>
   </div>
   </div>
-</fieldset>
-    <fieldset>
-    <legend>Lisätiedot</legend>
-    <label for="osastot" class="label-additional">Mistä osastoista olet kiinnostunut?</label><br>
-    <input type="checkbox" id="muoti" name="muoti">
-    <label for="muoti">Muoti</label><br>
-    <input type="checkbox" id="urheilu" name="urheilu">
-    <label for="urheilu">Urheilu</label><br>
-    <input type="checkbox" id="sisustaminen" name="sisustaminen">
-    <label for="sisustaminen">Sisustaminen</label><br>
-    <input type="checkbox" id="pelit" name="pelit">
-    <label for="pelit">Pelit</label><br>
-    <input type="checkbox" id="elokuvat" name="elokuvat">
-    <label for="elokuvat">Elokuvat</label><br>
-    <label for="maksutapa" class="label-additional">Maksutapa:</label>
-    <select id="maksutapa" name="maksutapa">
-        <option value="sampo">Sampo</option>
-        <option value="nordea">Nordea</option>
-        <option value="osuuspankki">Osuuspankki</option>
-        <option value="aktia">Aktia</option>
-    </select><br>
-    <label for="palaute" class="label-additional">Anna palautetta:</label><br>
-    <textarea id="palaute" name="palaute" required rows="4" cols=""></textarea><br>
-    <label for="toimitusehdot" class="label-additional">Olen lukenut ja hyväksyn tuotteiden toimitusehdot.</label><br>
-    <input type="radio" id="kylla" name="toimitusehdot" value="kylla">
-    <label for="kylla">Kyllä</label><br>
-    <input type="radio" id="ei" name="toimitusehdot" value="ei">
-    <label for="ei">Ei</label><br>
-    </fieldset>
-    <button type="submit" class="btn btn-primary">Submit</button>
+
+    
+    <button type="submit" name="sudmitcontract" class="btn btn-primary">Submit</button>
 
 </form>
 </div>
