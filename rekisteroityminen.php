@@ -1,6 +1,6 @@
 <?php
 $title = "Rekisteröityminen";
-$css = "koulutuksiencss.css";
+$css = "rekisteroituminen.css";
 include "headers.php";
 ?>
 <body>
@@ -16,23 +16,19 @@ include "headers.php";
     <input type="text" id="nimi" name="nimi"  title="Kirjoita nimi (väh. 2 merkkiä) ilman erikoismerkkejä" class="form-control" pattern="[A-ZÅÄÖa-zåäö \-']{2,}" required>
     <div class="invalid-feedback">Anna nimi oikeassa muodossa</div>
     </div>
-    
- 
-    
+
     <div class="col-sm-6">
     <label for="katuosoite" class="label-responsive form-label-sm">Katuosoite:</label>
     <input type="text" class="form-control" id="katuosoite" title="Kirjoita katuosoitteesi" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
     <div class="invalid-feedback">Anna katuosoite</div>
     </div>
 
-    
     <div class="col-sm-6">
     <label for="postinumero" class="label-responsive form-label-sm">Postinumero:</label>
     <input type="text" class="form-control" id="postinumero" title="Kirjoita postinumerosi" pattern="\d{5}" required>
     <div class="invalid-feedback">Anna postinumer vain 5 numeroa</div>
     </div>
     
-
     <div class="col-sm-6">
     <label for="kaupunki" class="label-responsive form-label-sm">Kaupunki:</label>
   <input type="text" class="form-control" id="kaupunki" name="kaupunki" list="kaupungit" title="Kirjoita kaupunkisi tai valitse listalta" pattern="[A-ZÅÄÖa-zåäö \-]+" required>
@@ -351,7 +347,6 @@ include "headers.php";
     </div>
   </div>
 
- 
     <div class="col-sm-6">
     <label for="puhelinnumero" class="label-responsive form-label-sm">Puhelinnumero:</label>
     <input type="text" class="form-control" id="puhelinnumero" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
@@ -364,7 +359,6 @@ include "headers.php";
     <div class="invalid-feedback">Anna Sähköposti</div>  
     </div>
   
-
     <div class="col-sm-6">
     <label for="salasana" class="label-responsive form-label-sm">Salasana:</label>
     <input type="password" class="form-control" id="salasana" minlength="12" required>
@@ -377,10 +371,9 @@ include "headers.php";
     <div class="invalid-feedback">Toista salasana</div>
   </div>
   </div>
-
-    
+  <div class="row mb-3">
     <button type="submit" name="sudmitcontract" class="btn btn-primary">Submit</button>
-
+    </div>
 </form>
 </div>
 <?php include "footer.html"; ?>
