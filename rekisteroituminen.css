@@ -165,3 +165,6 @@ footer {
   
 }
 
+input.form-control {
+  padding-left: 15px !important;
+}
