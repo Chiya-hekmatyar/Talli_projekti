@@ -10,8 +10,8 @@ include 'headers.php';
 
 <div class="content">
   <div class="container">
-    <h2 class="left">Koulutukset ja kurssit</h2>
-    <p class="left">Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>
+    <h2>Koulutukset ja kurssit</h2>
+    <p>Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>
 
     <div class="row">
       <h2 class="left">Koulutuksia</h2>
