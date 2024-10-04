@@ -13,25 +13,25 @@ include "headers.php";
     <div class="col mb-2">
     <label for="nimi" class="label-responsive form-label-sm">Nimi:</label>
     <div class="col-sm-6">
-    <input type="text" id="nimi" name="nimi"  title="Kirjoita nimi (väh. 2 merkkiä) ilman erikoismerkkejä" class="form-control" style="padding-left: 15px;" pattern="[A-ZÅÄÖa-zåäö \-']{2,}" required>
+    <input type="text" id="nimi" name="nimi"  title="Kirjoita nimi (väh. 2 merkkiä) ilman erikoismerkkejä" class="form-control  ps-3" pattern="[A-ZÅÄÖa-zåäö \-']{2,}" required>
     <div class="invalid-feedback">Anna nimi oikeassa muodossa</div>
     </div>
 
     <div class="col-sm-6">
     <label for="katuosoite" class="label-responsive form-label-sm">Katuosoite:</label>
-    <input type="text" class="form-control" id="katuosoite" title="Kirjoita katuosoitteesi" style="padding-left: 15px;" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
+    <input type="text" class="form-control  ps-3" id="katuosoite" title="Kirjoita katuosoitteesi" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
     <div class="invalid-feedback">Anna katuosoite</div>
     </div>
 
     <div class="col-sm-6">
     <label for="postinumero" class="label-responsive form-label-sm">Postinumero:</label>
-    <input type="text" class="form-control" id="postinumero" title="Kirjoita postinumerosi" style="padding-left: 15px;" pattern="\d{5}" required>
+    <input type="text" class="form-control  ps-3" id="postinumero" title="Kirjoita postinumerosi" pattern="\d{5}" required>
     <div class="invalid-feedback">Anna postinumer vain 5 numeroa</div>
     </div>
     
     <div class="col-sm-6">
     <label for="kaupunki" class="label-responsive form-label-sm">Kaupunki:</label>
-  <input type="text" class="form-control" id="kaupunki" name="kaupunki" list="kaupungit" style="padding-left: 15px;" title="Kirjoita kaupunkisi tai valitse listalta" pattern="[A-ZÅÄÖa-zåäö \-]+" required>
+  <input type="text" class="form-control  ps-3" id="kaupunki" name="kaupunki" list="kaupungit" title="Kirjoita kaupunkisi tai valitse listalta" pattern="[A-ZÅÄÖa-zåäö \-]+" required>
   <datalist id="kaupungit">
       <option value="Akaa">
       <option value="Alajärvi">
@@ -349,30 +349,30 @@ include "headers.php";
 
     <div class="col-sm-6">
     <label for="puhelinnumero" class="label-responsive form-label-sm">Puhelinnumero:</label>
-    <input type="text" class="form-control" id="puhelinnumero" style="padding-left: 15px;" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
+    <input type="text" class="form-control  ps-3" id="puhelinnumero" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
     <div class="invalid-feedback">Anna puhelinnumero</div>
     </div>
 
     <div class="col-sm-6">
     <label for="sahkoposti" class="label-responsive form-label-sm">Sähköposti:</label>
-    <input type="email" class="form-control" id="sahkoposti" name="sahkoposti" style="padding-left: 15px;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input type="email" class="form-control  ps-3" id="sahkoposti" name="sahkoposti" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
     <div class="invalid-feedback">Anna Sähköposti</div>  
     </div>
   
     <div class="col-sm-6">
     <label for="salasana" class="label-responsive form-label-sm">Salasana:</label>
-    <input type="password" class="form-control" id="salasana" style="padding-left: 15px;" minlength="12" required>
+    <input type="password" class="form-control  ps-3" id="salasana" minlength="12" required>
     <div class="invalid-feedback">Kirjoita salasane vähintään 12 merkkiä</div>
     </div>
  
     <div class="col-sm-6">
     <label for="salasana2" class="label-responsive form-label-sm">Salasana uudestaan:</label>
-    <input type="password" class="form-control" id="salasana2" style="padding-left: 15px;" minlength="12" required>
+    <input type="password" class="form-control  ps-3" id="salasana2" minlength="12" required>
     <div class="invalid-feedback">Toista salasana</div>
   </div>
   </div>
 
-    <button type="submit" name="sudmitcontract" style="padding-left: 15px;" class="btn btn-primary">Submit</button>
+    <button type="submit" name="sudmitcontract"  class="btn btn-primary  ps-3">Submit</button>
     
 </form>
 </div>
