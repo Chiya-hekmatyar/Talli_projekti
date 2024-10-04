@@ -1,19 +1,12 @@
 const projekti = "azuretesti"
-const myFunction = () => {
-    var x = document.querySelector("nav")
-    x.classList.toggle("responsive")
-    }
+const currentLocation = window.location.pathname;
+const navLinks = document.querySelectorAll('nav a');
 
-  /* Huom. tämä on vain esimerkki, joka ei välttämättä toimi oikein */ 
-  var currentPath = location.pathname.split(`${projekti}/`).pop();
-  console.log("currentPath:",currentPath);
-  var navLinks = document.querySelectorAll("nav a");
-
-  navLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPath) {
-          link.classList.add("active");
-      }
-  });
+navLinks.forEach(link => {
+  if(link.href.includes(currentLocation)) {
+    link.classList.add('active');
+  }
+});
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
