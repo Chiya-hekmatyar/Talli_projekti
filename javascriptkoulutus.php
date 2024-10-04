@@ -8,7 +8,7 @@ include 'headers.php';
 <body>
     <?php include 'navigointi.html'; ?>  
 
-    <div class="content container mt-5">
+    <div class="content container mt-0">
       
         <h1 class="text-left">Javascript Koulutus</h1>
         
