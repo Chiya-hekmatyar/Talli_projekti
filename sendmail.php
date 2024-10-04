@@ -8,12 +8,23 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get recipient email, subject, and message from the form
+    $sahkoposti = filter_var($_POST['sahkoposti'], FILTER_VALIDATE_EMAIL);
+   
+
+    // Validate email address
+    if (!$sahkoposti) {
+        echo 'Invalid email address.';
+        exit;
+    }
+
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
 try {
     $nimi = $_POST['nimi'];
-    $sahkoposti = $_POST['sahkoposti'];
+   
 
     //Server settings
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -44,4 +55,5 @@ try {
     header('Location: index.php');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+}
 }
