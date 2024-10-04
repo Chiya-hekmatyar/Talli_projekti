@@ -1,28 +1,44 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <!-- "Etusivu" (index.php) as a regular item -->
-    <a class="navbar-brand" href="index.php">Etusivu</a>
+    <div class="container">
+        <!-- Use PHP to set the toggler label as the current active page -->
+        <a class="navbar-brand d-lg-none" href="#">
+            <?php
+                if ($title == 'Etusivu') {
+                    echo 'Etusivu';
+                } elseif ($title == 'Koulutukset') {
+                    echo 'Koulutukset';
+                } elseif ($title == 'Yhteydenotto') {
+                    echo 'Ota yhteyttä';
+                } elseif ($title == 'Rekisteröidy') {
+                    echo 'Rekisteröidy';
+                }
+            ?>
+        </a>
 
-    <!-- Toggler button for mobile view -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Toggler for mobile view -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <!-- Navigation links that will collapse in mobile view -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">  <!-- Align the links to the right -->
-            <li class="nav-item">
-                <a class="nav-link" id="nav-koulutukset" href="koulutukset.php">Koulutukset</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-yhteydenotto" href="yhteydenotto.php">Ota yhteyttä</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="nav-rekisteroityminen" href="rekisteroityminen.php">Rekisteröidy</a>
-            </li>
-        </ul>
+        <!-- Collapsible links for mobile view -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($title == 'Etusivu') echo 'active'; ?>" href="index.php">Etusivu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($title == 'Koulutukset') echo 'active'; ?>" href="koulutukset.php">Koulutukset</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($title == 'Yhteydenotto') echo 'active'; ?>" href="yhteydenotto.php">Ota yhteyttä</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php if ($title == 'Rekisteröidy') echo 'active'; ?>" href="rekisteroityminen.php">Rekisteröidy</a>
+                </li>
+            </ul>
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
     </div>
-    
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-    </a>
-</nav>
+</nav>  
