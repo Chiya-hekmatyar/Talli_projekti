@@ -68,3 +68,16 @@ footer {
     display: inline-block;
   }
 }
+
+.submit-button {
+  padding-left: 20px;
+}
+
+.submit-button:hover, .submit-button:focus {
+  background-color: #4CAF50; 
+  
+}
+
+input.form-control {
+  padding-left: 12px;
+}

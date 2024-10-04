@@ -48,16 +48,16 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Talli rekistöroityminen';
+    $mail->Subject = 'Talli rekistoroityminen';
     $mail->Body    = '<html><body><h1>Talli rekistoroityminen</h1>
     <p>Tervetuluo '.$nimi.' Talliin klikkaa alla olevaa linkkia valitsemaan koulutuksen ja hauskaa opiskelua</p>
     <p href="https://hekmatyarch-hxayb4dxd0dhdkan.westeurope-01.azurewebsites.net/koulutukset.php">klikkaa tasta</p></body></html>';
    
 
     
-   
     $mail->send();
     echo 'Message has been sent to ' . $sahkoposti;
+    header('Location: index.php');
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
