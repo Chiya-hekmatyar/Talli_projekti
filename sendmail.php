@@ -9,18 +9,21 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get recipient email, subject, and message from the form
-    $sahkoposti = filter_var($_POST['sahkoposti'], FILTER_VALIDATE_EMAIL);
-   
+    // Debug: Check submitted form data
+    echo '<pre>';
+    print_r($_POST);
+    echo '</pre>';
 
-    // Validate email address
-    if (!$sahkoposti) {
-        echo 'Invalid email address.';
-        exit;
-    }
+    // Get form data and validate it
+    $sahkoposti= $_POST['sahkoposti'] ?? ''; // Get the email or an empty string if it's not set
+    
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+    // Validate recipient email
+    if (!empty($sahkoposti) && filter_var($sahkoposti, FILTER_VALIDATE_EMAIL)) {
+        // Create an instance of PHPMailer
+        $mail = new PHPMailer(true);
+
+
 
 try {
     $nimi = $_POST['nimi'];
@@ -34,7 +37,7 @@ try {
     $mail->Username   = 'b5d4fc4458fd21';                     //SMTP username
     $mail->Password   = 'bd1fdfd53d1005';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
     $mail->setFrom(address:'talli@gmail.com', name:'Mailer');
@@ -51,9 +54,17 @@ try {
     <p href="https://hekmatyarch-hxayb4dxd0dhdkan.westeurope-01.azurewebsites.net/koulutukset.php">klikkaa tasta</p></body></html>';
    
 
+    
+   
     $mail->send();
-    header('Location: index.php');
+    echo 'Message has been sent to ' . $sahkoposti;
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+} else {
+echo 'Invalid email address.';
 }
+} else {
+echo 'Form not submitted correctly.';
+}
+?>

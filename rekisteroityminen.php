@@ -355,7 +355,7 @@ include "headers.php";
 
     <div class="col-sm-6">
     <label for="sahkoposti" class="label-responsive form-label-sm">Sähköposti:</label>
-    <input type="email" class="form-control" id="sahkoposti"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+    <input type="email" class="form-control" id="sahkoposti" name="sahkoposti" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
     <div class="invalid-feedback">Anna Sähköposti</div>  
     </div>
   
