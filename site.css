@@ -83,7 +83,7 @@ body {
 
 .navbar-brand.nav-link:hover {
   background-color: transparent; 
-  color: inherit; 
+  color: white; 
   text-decoration: none; 
 }
   
