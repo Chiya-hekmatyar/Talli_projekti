@@ -104,9 +104,8 @@ text-decoration: none;
   }
   
   .content {
-    min-height: calc(69vh); 
-    padding-top: 75px;
-}
+    z-index: 1; 
+ }
     
 
 .left {
