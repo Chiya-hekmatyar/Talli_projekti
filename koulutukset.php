@@ -7,40 +7,66 @@ include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
+
 <div class="content">
-  <h2 class="left">Koulutukset ja kurssit</h2>
-  <p class="left">Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>:
-<div class="sailio">
-    <h2 class="left">Koulutuksia</h2>
-    <div class="kuvaboxi-container">
-        <a href="javascriptkoulutus.php">
-            <div class="kuvaboxi">
-                <img src="kuva.png" alt="Kuvan teksti">
-                <div class="kuvaus">Javascript kurssi</div>
-            </div>
-        </a>
-        <a href="phpkoulutus.php">
-            <div class="kuvaboxi">
-                <img src="kuva2.png" alt="Kuvan teksti">
-                <div class="kuvaus">php kurssi</div>
-            </div>
-        </a>
-        <a href="mysqlkoulutus.php">
-            <div class="kuvaboxi">
-                <img src="kuva3.png" alt="Kuvan teksti">
-                <div class="kuvaus">mysql kurssi</div>
-            </div>
-        </a>
-        <a href="htmlcsskoulutus.php">
-            <div class="kuvaboxi">
-                <img src="kuva4.png" alt="Kuvan teksti">
-                <div class="kuvaus">html ja css kurssi</div>
-            </div>
-        </a>
-    </div>
+  <div class="container">
+    <h2 class="left">Koulutukset ja kurssit</h2>
+    <p class="left">Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>
+
+    <div class="row">
+      <h2 class="left">Koulutuksia</h2>
+      <!-- First Course -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="javascriptkoulutus.php">
+            <img class="card-img-top" src="kuva.png" alt="Javascript kurssi">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">Javascript kurssi</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Course -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="phpkoulutus.php">
+            <img class="card-img-top" src="kuva2.png" alt="PHP kurssi">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">PHP kurssi</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Course -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="mysqlkoulutus.php">
+            <img class="card-img-top" src="kuva3.png" alt="MySQL kurssi">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">MySQL kurssi</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Course -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="htmlcsskoulutus.php">
+            <img class="card-img-top" src="kuva4.png" alt="HTML ja CSS kurssi">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">HTML ja CSS kurssi</h5>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End of row -->
+  </div> <!-- End of container -->
 </div>
-</div>
-</div>
+
 <?php include 'footer.html'; ?>
 </body>
 </html>
