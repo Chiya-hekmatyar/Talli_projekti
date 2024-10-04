@@ -13,6 +13,7 @@ $mail = new PHPMailer(true);
 
 try {
     $nimi = $_POST['nimi'];
+    $sahkoposti = $_POST['sahkoposti'];
 
     //Server settings
     //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
@@ -26,7 +27,7 @@ try {
 
     //Recipients
     $mail->setFrom(address:'talli@gmail.com', name:'Mailer');
-    $mail->addAddress(address:'chibiis088@gmail.com', name:'nimi');     //Add a recipient
+    $mail->addAddress($sahkoposti);     //Add a recipient
    
 
  
