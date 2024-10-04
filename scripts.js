@@ -1,10 +1,32 @@
 const projekti = "azuretesti"
-const currentLocation = window.location.pathname;
-const navLinks = document.querySelectorAll('nav a');
+document.addEventListener('DOMContentLoaded', function () {
+  // Get the current page URL
+  var currentPage = window.location.pathname.split('/').pop();
+  
+  // Define the mapping of pages to nav links
+  var navLinks = {
+      'index.php': 'nav-home',
+      'koulutukset.php': 'nav-koulutukset',
+      'yhteydenotto.php': 'nav-yhteydenotto',
+      'rekisteroityminen.php': 'nav-rekisteroityminen'
+  };
 
-navLinks.forEach(link => {
-  if(link.href.includes(currentLocation)) {
-    link.classList.add('active');
+  // Remove 'active' class from all nav links
+  for (var key in navLinks) {
+      if (navLinks.hasOwnProperty(key)) {
+          var link = document.getElementById(navLinks[key]);
+          if (link) {
+              link.classList.remove('active');
+          }
+      }
+  }
+
+  // Add 'active' class to the current nav link
+  if (navLinks[currentPage]) {
+      var activeLink = document.getElementById(navLinks[currentPage]);
+      if (activeLink) {
+          activeLink.classList.add('active');
+      }
   }
 });
 
