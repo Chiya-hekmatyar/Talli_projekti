@@ -103,7 +103,10 @@ text-decoration: none;
         }
   }
   
-
+  .content {
+    min-height: calc(69vh); 
+    padding-top: 75px;
+}
     
 
 .left {
@@ -119,24 +122,13 @@ text-decoration: none;
 }
 
 .kuvaboxi-container {
-
   display: flex; 
   gap: 20px; 
   flex-wrap: wrap; 
+  justify-content: flex-start;
 }
-
-
-.sailio > .teksti {
-
-  margin: 0; 
-  padding: 10px 0; 
-  font-size: 1.5em; 
-  text-align: left; 
-}
-
 
 .kuvaboxi {
-  
   display: inline-block;
   width: 200px; 
   text-align: center; 
@@ -147,7 +139,6 @@ text-decoration: none;
   background-color: #f9f9f9; 
 }
 
-
 .kuvaboxi img {
   max-width: 100%; 
   height: auto; 
@@ -155,9 +146,12 @@ text-decoration: none;
   border-radius: 8px; 
 }
 
-
 .kuvaus {
   padding: 10px; 
   color: #333; 
   font-size: 14px;
+}
+
+a:hover .kuvaboxi {
+  opacity: 0.9;
 }
