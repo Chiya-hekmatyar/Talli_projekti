@@ -121,33 +121,25 @@ body {
 }
 
 
+.kuvaboxi-container {
+  display: flex; 
+  gap: 20px; 
+  flex-wrap: wrap; 
+  justify-content: flex-start; /* Ensure items start from the left */
+}
+
 .kuvaboxi {
-    
-    display: inline-block;
-    width: 200px; 
-    text-align: center; 
-    border: 1px solid #ddd; 
-    border-radius: 8px; 
-    padding: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    background-color: #f9f9f9; 
+  display: inline-block; /* Ensure it's treated as an inline block */
+  width: 200px; 
+  text-align: center; 
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #f9f9f9; 
+  transition: opacity 0.3s; /* For smooth hover effect */
 }
 
-
-.kuvaboxi img {
-    max-width: 100%; 
-    height: auto; 
-    border-bottom: 2px solid #ddd; 
-    border-radius: 8px; 
-}
-
-
-.kuvaus {
-    padding: 10px; 
-    color: #333; 
-    font-size: 14px;
-}
-
-a:hover .kuvaboxi {
+.kuvaboxi:hover {
   opacity: 0.9; /* Optional hover effect for the box */
 }
