@@ -10,33 +10,29 @@ include "headers.php";
 <form action="sendmail.php" method="POST" class="needs-validation" novalidate>
     
     <legend>Henkilötiedot</legend>
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="nimi" class="label-responsive form-label-sm">Nimi:</label>
-    <div class="col-sm-6">
     <input type="text" id="nimi" name="nimi"  title="Kirjoita nimi (väh. 2 merkkiä) ilman erikoismerkkejä" class="form-control" pattern="[A-ZÅÄÖa-zåäö \-']{2,}" required>
     <div class="invalid-feedback">Anna nimi oikeassa muodossa</div>
     </div>
     </div>
 
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="katuosoite" class="label-responsive form-label-sm">Katuosoite:</label>
-    <div class="col-sm-6">
     <input type="text" class="form-control" id="katuosoite" title="Kirjoita katuosoitteesi" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
     <div class="invalid-feedback">Anna katuosoite</div>
     </div>
     </div>
 
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="postinumero" class="label-responsive form-label-sm">Postinumero:</label>
-    <div class="col-sm-6">
     <input type="text" class="form-control" id="postinumero" title="Kirjoita postinumerosi" pattern="\d{5}" required>
     <div class="invalid-feedback">Anna postinumer vain 5 numeroa</div>
     </div>
     </div>
     
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="kaupunki" class="label-responsive form-label-sm">Kaupunki:</label>
-    <div class="col-sm-6">
   <input type="text" class="form-control" id="kaupunki" name="kaupunki" list="kaupungit" title="Kirjoita kaupunkisi tai valitse listalta" pattern="[A-ZÅÄÖa-zåäö \-]+" required>
   <datalist id="kaupungit">
       <option value="Akaa">
@@ -354,33 +350,29 @@ include "headers.php";
   </div>
   </div>
 
-     <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="puhelinnumero" class="label-responsive form-label-sm">Puhelinnumero:</label>
-    <div class="col-sm-6">
     <input type="text" class="form-control" id="puhelinnumero" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
     <div class="invalid-feedback">Anna puhelinnumero</div>
     </div>
     </div>
 
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="sahkoposti" class="label-responsive form-label-sm">Sähköposti:</label>
-    <div class="col-sm-6">
     <input type="email" class="form-control" id="sahkoposti" name="sahkoposti" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
     <div class="invalid-feedback">Anna Sähköposti</div>  
     </div>
     </div>
   
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="salasana" class="label-responsive form-label-sm">Salasana:</label>
-    <div class="col-sm-6">
     <input type="password" class="form-control" id="salasana" minlength="12" required>
     <div class="invalid-feedback">Kirjoita salasane vähintään 12 merkkiä</div>
     </div>
     </div>
  
-    <div class="row mb-2 form-group">
+    <div class="form-group col-sm-6">
     <label for="salasana2" class="label-responsive form-label-sm">Salasana uudestaan:</label>
-    <div class="col-sm-6">
     <input type="password" class="form-control" id="salasana2" minlength="12" required>
     <div class="invalid-feedback">Toista salasana</div>
   </div>
