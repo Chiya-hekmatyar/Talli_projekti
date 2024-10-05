@@ -1,10 +1,13 @@
-html, body { height: 100%;}
+html, body {
+  height: 100%;
+}
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
- }
- footer {
+}
+
+footer {
   position: sticky;
   top: 100vh;
   background-color: #212529;
@@ -12,8 +15,9 @@ body {
   width: 100%;
   padding: 4px;
   text-align: center;
-  }
- nav {
+}
+
+nav {
   overflow: hidden;
   background-color: #333;
   position: relative;
@@ -22,39 +26,41 @@ body {
   align-items: flex-start;
   font-size: 17px;
   z-index: 1000;
-  }
-  
+}
+
 nav a {
   display: block;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  }
+}
 
-nav a:not(:first-child) { display: none; }
-  
+nav a:not(:first-child) {
+  display: none;
+}
+
 nav a.icon {
   display: block;
   position: absolute;
   right: 0;
   top: 0;
-  }
+}
 
 nav a.active {
   background-color: #0478aa;
   color: white;
-  }
+}
 
 nav.responsive a {
   display: block;
   padding: 14px;
-  }
+}
 
 nav a:hover {
-    background-color: #ddd;
-    color: black;
-    }
+  background-color: #ddd;
+  color: black;
+}
 
 fieldset {
   margin: 10px 0;
@@ -64,77 +70,80 @@ fieldset {
 }
 
 legend {
-  font-size: 1.2em; 
+  font-size: 1.2em;
   color: #333;
   float: none;
-  width: auto; 
+  width: auto;
   padding: 0 10px;
   margin-bottom: 0;
 }
 
 .nav-link.active {
   background-color: #0478aa;
-  color: white !important; 
+  color: white !important;
 }
+
 .navbar-toggler {
   outline: none;
   border: none;
 }
 
 .navbar-brand.nav-link:hover {
-background-color: transparent; 
-color: white; 
-text-decoration: none; 
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 576px) {
-    nav {
-        display: flex;
-        flex-direction: row;
-        place-items: center;
-        }
-
-    nav a:not(.icon) { display: block; }
-
-    nav a.icon { display: none; }
-
-    .oikea {
-        margin-left: auto;
-        }
+  nav {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
   }
-  
 
-input,select,textarea {
+  nav a:not(.icon) {
+    display: block;
+  }
+
+  nav a.icon {
+    display: none;
+  }
+
+  .oikea {
+    margin-left: auto;
+  }
+}
+
+input, select, textarea {
   font-size: 1rem;
   font-family: Arial, sans-serif;
   padding: 4px;
 }
 
-
-select,textarea {
+select, textarea {
   font-size: 1rem;
   font-family: Arial, sans-serif;
 }
 
 textarea {
-  width: 90%;
+  width: 100%; 
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  padding: 10px 20px 40px 20px;
+  padding-left: 20px; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  background-color: #f8f9fa; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
 }
-
-
-
 
 .label-responsive {
   display: block;
   margin-top: 10px;
   width: 175px;
-  padding-left: 20px;
-  white-space: nowrap;
 }
 
 .label-additional {
@@ -157,8 +166,7 @@ textarea {
 }
 
 .submit-button:hover, .submit-button:focus {
-  background-color: #4CAF50; 
-  
+  background-color: #4CAF50;
 }
 
 input.form-control {
@@ -166,19 +174,19 @@ input.form-control {
 }
 
 .form-control {
-  border: 2px solid #007bff; /* Blue border */
-  background-color: #e8f0fe; /* Light blue background */
+  border: 2px solid #007bff;
+  background-color: #e8f0fe; 
   color: #333;
   padding: 12px;
 }
 
 .form-control:focus {
-  border-color: #28a745; /* Green border on focus */
-  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Shadow on focus */
-  background-color: #eaffea; /* Light green background on focus */
+  border-color: #28a745;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); 
+  background-color: #eaffea; 
 }
 
 ::placeholder {
   color: #6c757d;
-  font-size: 1.1rem; /* Larger placeholder */
+  font-size: 1.1rem; 
 }
