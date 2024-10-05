@@ -15,7 +15,7 @@ include 'headers.php';
 
     <div class="row">
       <h2 class="left">Koulutuksia</h2>
-      <!-- First Course -->
+      
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">
           <a href="javascriptkoulutus.php">
@@ -27,7 +27,7 @@ include 'headers.php';
         </div>
       </div>
 
-      <!-- Second Course -->
+     
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">
           <a href="phpkoulutus.php">
@@ -39,7 +39,7 @@ include 'headers.php';
         </div>
       </div>
 
-      <!-- Third Course -->
+    
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">
           <a href="mysqlkoulutus.php">
@@ -51,20 +51,31 @@ include 'headers.php';
         </div>
       </div>
 
-      <!-- Fourth Course -->
+      
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">
-          <a href="htmlcsskoulutus.php">
-            <img class="card-img-top" src="kuva4.png" alt="HTML ja CSS kurssi">
+          <a href="htmlkoulutus.php">
+            <img class="card-img-top" src="kuva4.png" alt="HTML kurssi">
           </a>
           <div class="card-body text-center">
-            <h5 class="card-title">HTML ja CSS kurssi</h5>
+            <h5 class="card-title">HTML kurssi</h5>
           </div>
         </div>
       </div>
 
-    </div> <!-- End of row -->
-  </div> <!-- End of container -->
+      <div class="col-md-3 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="csskoulutus.php">
+            <img class="card-img-top" src="kuva5.png" alt="CSS kurssi">
+          </a>
+          <div class="card-body text-center">
+            <h5 class="card-title">CSS kurssi</h5>
+          </div>
+        </div>
+      </div>
+
+    </div> 
+  </div>
 </div>
 
 <?php include 'footer.html'; ?>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-$title = "HTML ja CSS koulutus";
+$title = "CSS koulutus";
 $css = "koulutuksiencss.css";
 include 'headers.php';
 ?>
@@ -10,13 +10,12 @@ include 'headers.php';
 
     <div class="content">
       
-        <h1>HTML ja CSS Koulutus</h1>
+        <h1>CSS Koulutus</h1>
         
       
         <p class="left">
-            HTML (Hypertext Markup Language) on verkkosivujen rakenteen kieli, ja CSS (Cascading Style Sheets)
-            on tyyliohjeiden kieli, jota käytetään verkkosivujen ulkoasun määrittämiseen. HTML ja CSS -koulutuksessa
-            opit luomaan visuaalisesti houkuttelevia ja responsiivisia verkkosivuja, jotka toimivat saumattomasti eri laitteilla.
+        CSS (Cascading Style Sheets) on tyyliohjeiden kieli, jota käytetään verkkosivujen ulkoasun määrittämiseen. CSS koulutuksessa
+        opit luomaan visuaalisesti houkuttelevia ja responsiivisia verkkosivuja, jotka toimivat saumattomasti eri laitteilla.
         </p>
 
        
