@@ -8,7 +8,6 @@ include "headers.php";
 <div class="container">
 <h1>Rekisteröityminen Tallin koulutuksiin</h1>
 <form action="sendmail.php" method="POST" class="needs-validation" novalidate>
-    
     <legend>Henkilötiedot</legend>
     <div class="form-group col-sm-6">
     <label for="nimi" class="label-responsive form-label-sm">Nimi:</label>
