@@ -6,7 +6,7 @@ include "headers.php";
 <body>
 <?php include "navigointi.html"; ?>
 <div class="container">
-<h1>Rekisteröityminen Tallin koulutuksiin</h1>
+<h2>Rekisteröityminen Tallin koulutuksiin</h2>
 <form action="sendmail.php" method="POST" class="needs-validation" novalidate>
     <legend>Henkilötiedot</legend>
     <div class="form-group col-sm-6">
