@@ -20,29 +20,41 @@ h1 {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Form field styling */
+/* Form styling */
 form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
+/* Each form field wrapper */
 .col-sm-6 {
-  display: flex;
-  flex-direction: column;
+  flex: 1 1 48%; /* 48% width for each field to fit two per row, with small margin */
   margin-bottom: 15px;
+  box-sizing: border-box; /* Ensure padding/margins don't affect overall width */
 }
 
+/* Full-width fields for smaller screens */
+@media (max-width: 768px) {
+  .col-sm-6 {
+      flex: 1 1 100%; /* Make each field full width */
+  }
+}
+
+/* Label styling */
 label {
   margin-bottom: 5px;
   font-weight: bold;
+  display: block;
 }
 
+/* Input and select fields */
 input, select, datalist {
+  width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  width: 100%;
   box-sizing: border-box;
 }
 
@@ -59,6 +71,7 @@ input:focus, select:focus {
   display: none;
 }
 
+/* Error message on invalid fields */
 input:invalid + .invalid-feedback {
   display: block;
 }
@@ -72,34 +85,23 @@ button[type="submit"] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  margin-top: 20px;
   align-self: flex-start;
+  margin-top: 20px;
 }
 
+/* Button hover effect */
 button[type="submit"]:hover {
   background-color: #0056b3;
 }
 
-/* Responsive adjustments */
+/* Responsive button */
 @media (max-width: 768px) {
-  .content {
-      padding: 10px;
-  }
-
-  h1.left {
-      text-align: center;
-  }
-
-  .col-sm-6 {
-      width: 100%;
-  }
-
   button[type="submit"] {
-      width: 100%;
+      width: 100%; /* Full-width button on small screens */
   }
 }
 
-/* Adjustments for small screen devices */
+/* Responsive adjustments */
 @media (max-width: 576px) {
   label {
       font-size: 14px;
@@ -115,10 +117,6 @@ button[type="submit"]:hover {
   }
 }
 
-
-input.form-control {
-  padding-left: 15px !important;
-}
 
 .form-control {
   border: 2px solid #007bff;
