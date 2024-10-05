@@ -21,9 +21,7 @@ nav {
   }
   
   h1 {
-    margin-top: 80px; /* Adjust this value based on the height of your navbar */
-    text-align: center;
-    font-size: 24px;
+    margin-top: 60px; 
     font-weight: bold;
 }
 
