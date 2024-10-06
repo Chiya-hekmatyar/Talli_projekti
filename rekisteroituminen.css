@@ -25,14 +25,14 @@ nav {
     font-weight: bold;
 }
 
-/* content styles */
-.content {
+/* Container styles */
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 20px auto;
-  margin-top: 80px;
+  margin-top: 50px;
   padding: 20px;
   max-width: 800px;
   background-color: #fff;
@@ -42,7 +42,7 @@ nav {
 }
 
 /* Form styling */
-.content form {
+.container form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -51,22 +51,22 @@ nav {
 }
 
 /* Form group styling */
-.content .form-group {
+.container .form-group {
   flex: 1 1 48%; /* Each form group takes about half the width */
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
 
 /* Input fields */
-.content .form-group label {
+.container .form-group label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.content .form-group input,
-.content .form-group select,
-.content .form-group textarea {
+.container .form-group input,
+.container .form-group select,
+.container .form-group textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -76,7 +76,7 @@ nav {
 }
 
 /* Ensure buttons span the width of the form group */
-.content .form-group button {
+.container .form-group button {
   padding: 10px;
   background-color: #4CAF50;
   color: white;
@@ -86,13 +86,13 @@ nav {
   font-size: 16px;
 }
 
-.content .form-group button:hover {
+.container .form-group button:hover {
   background-color: #45a049;
 }
 
 /* Responsive design: Full-width form groups on smaller screens */
 @media (max-width: 768px) {
-  .content .form-group {
+  .container .form-group {
       flex: 1 1 100%; /* Each form group takes full width on small screens */
   }
 }
