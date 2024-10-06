@@ -7,7 +7,7 @@ include 'headers.php';
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
-<div class="content container mt-0"> 
+<div class="content container mt-2"> 
   <h1>Yhteydenottopyyntö</h1>
   
   <div class="left">
