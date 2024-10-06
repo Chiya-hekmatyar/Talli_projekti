@@ -7,6 +7,10 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
+  background-image: url('background.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
 }
 
 footer {
