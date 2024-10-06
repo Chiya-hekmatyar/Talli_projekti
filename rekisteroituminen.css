@@ -55,7 +55,6 @@ nav {
   flex: 1 1 48%; /* Each form group takes about half the width */
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px; 
 }
 
 /* Input fields */
@@ -86,9 +85,6 @@ nav {
   font-size: 16px;
 }
 
-form .form-group {
-  margin-bottom: 15px; 
-}
 .container .form-group button:hover {
   background-color: #45a049;
 }
@@ -135,24 +131,20 @@ input:invalid + .invalid-feedback {
   display: block;
 }
 
-/* Button styling */
-button[type="submit"] {
+
+.submit-btn {
+  margin-top: 20px; /* Ensure there's space above the button */
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #0056b3;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  align-self: flex-start;
-  margin-top: 20px;
 }
 
-/* Button hover effect */
-button[type="submit"]:hover {
+.submit-btn:hover {
   background-color: #0056b3;
 }
-
 /* Responsive button */
 @media (max-width: 768px) {
   button[type="submit"] {

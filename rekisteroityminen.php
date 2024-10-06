@@ -5,9 +5,8 @@ include "headers.php";
 ?>
 <body>
 <?php include "navigointi.html"; ?>
-
-<h2>Rekisteröityminen Tallin koulutuksiin</h2>
 <div class="container">
+<h2>Rekisteröityminen Tallin koulutuksiin</h2>
 <form action="sendmail.php" method="POST" class="needs-validation" novalidate>
     <legend>Henkilötiedot</legend>
     <div class="form-group col-sm-6">
@@ -378,7 +377,7 @@ include "headers.php";
   </div>
   
 
-    <button type="submit" name="sudmitcontract" class="btn btn-primary">Submit</button>
+    <button type="submit" name="sudmitcontract" class="submit-btn btn btn-primary">Submit</button>
     
 </form>
 </div>
