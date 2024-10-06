@@ -153,6 +153,7 @@ button[type="submit"]:hover {
 /* Responsive button */
 @media (max-width: 768px) {
   button[type="submit"] {
+    padding-top: 30px;
       width: 100%; /* Full-width button on small screens */
   }
 }
