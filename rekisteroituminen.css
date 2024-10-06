@@ -86,6 +86,9 @@ nav {
   font-size: 16px;
 }
 
+form .form-group {
+  margin-bottom: 15px; 
+}
 .container .form-group button:hover {
   background-color: #45a049;
 }
