@@ -108,6 +108,7 @@ body {
   .content {
     min-height: calc(69vh); 
     margin-top: 75px;
+    flex: 1;
 }
   .store {
     padding-left: 20px;
