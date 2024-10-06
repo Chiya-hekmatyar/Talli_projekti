@@ -377,7 +377,7 @@ include "headers.php";
   </div>
   
 
-  <button type="submit" name="submitcontract" class="btn btn-primary mt-3">Submit</button>
+  <button type="submit" name="submitcontract" class="btn btn-primary">Submit</button>
     
 </form>
 </div>
