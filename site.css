@@ -106,7 +106,7 @@ body {
     
   .content {
     min-height: calc(69vh); 
-    padding-top: 75px;
+    margin-top: 75px;
 }
   .store {
     padding-left: 20px;

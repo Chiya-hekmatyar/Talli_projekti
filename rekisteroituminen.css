@@ -25,14 +25,14 @@ nav {
     font-weight: bold;
 }
 
-/* Container styles */
-.container {
+/* content styles */
+.content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 20px auto;
-  margin-top: 50px;
+  margin-top: 80px;
   padding: 20px;
   max-width: 800px;
   background-color: #fff;
@@ -42,7 +42,7 @@ nav {
 }
 
 /* Form styling */
-.container form {
+.content form {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -51,21 +51,22 @@ nav {
 }
 
 /* Form group styling */
-.container .form-group {
+.content .form-group {
   flex: 1 1 48%; /* Each form group takes about half the width */
   display: flex;
   flex-direction: column;
+  margin-bottom: 15px;
 }
 
 /* Input fields */
-.container .form-group label {
+.content .form-group label {
   font-weight: bold;
   margin-bottom: 5px;
 }
 
-.container .form-group input,
-.container .form-group select,
-.container .form-group textarea {
+.content .form-group input,
+.content .form-group select,
+.content .form-group textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -75,7 +76,7 @@ nav {
 }
 
 /* Ensure buttons span the width of the form group */
-.container .form-group button {
+.content .form-group button {
   padding: 10px;
   background-color: #4CAF50;
   color: white;
@@ -85,13 +86,13 @@ nav {
   font-size: 16px;
 }
 
-.container .form-group button:hover {
+.content .form-group button:hover {
   background-color: #45a049;
 }
 
 /* Responsive design: Full-width form groups on smaller screens */
 @media (max-width: 768px) {
-  .container .form-group {
+  .content .form-group {
       flex: 1 1 100%; /* Each form group takes full width on small screens */
   }
 }
