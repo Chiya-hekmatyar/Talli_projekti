@@ -131,20 +131,25 @@ input:invalid + .invalid-feedback {
   display: block;
 }
 
-
-.submit-btn {
-  margin-top: 20px; /* Ensure there's space above the button */
+/* Button styling */
+button[type="submit"] {
   padding: 10px 20px;
-  background-color: #0056b3;
+  background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+  margin-top: 20px;
 }
 
-.submit-btn:hover {
+/* Button hover effect */
+button[type="submit"]:hover {
   background-color: #0056b3;
 }
+
+
 /* Responsive button */
 @media (max-width: 768px) {
   button[type="submit"] {
