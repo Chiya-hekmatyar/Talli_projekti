@@ -1,6 +1,10 @@
 <?php
 $title = "Rekisteröityminen";
 $css = "rekisteroituminen.css";
+$servername = " datasql7.westeurope.cloudapp.azure.com";
+$username = "hekmatyarch";
+$password = "73711"; 
+$dbname = "db04";
 include "headers.php";
 ?>
 <body>
