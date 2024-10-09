@@ -3,15 +3,49 @@
 <?php
 $title = "Yhteydenottopyyntö";
 $css = "yhteystiedot.css";
-$servername = " datasql7.westeurope.cloudapp.azure.com";
+$servername = "datasql7.westeurope.cloudapp.azure.com";
 $username = "hekmatyarch";
 $password = "73711"; 
 $dbname = "db04";
+
 include 'headers.php';
+
+// Form submission handling
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    
+    // Create a connection to the database
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    
+    // Prepare the SQL statement with placeholders
+    $stmt = $conn->prepare("INSERT INTO contact_requests (name, email, message) VALUES (?, ?, ?)");
+    
+    // Bind parameters (s = string, for name, email, and message)
+    $stmt->bind_param("sss", $name, $email, $message);
+    
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "<p>Yhteydenottopyyntö on lähetetty onnistuneesti!</p>";
+    } else {
+        echo "<p>Virhe: " . $stmt->error . "</p>";
+    }
+    
+    // Close the statement and connection
+    $stmt->close();
+    $conn->close();
+}
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
-<div class="content container mt-2"> 
+<div class="content container mt-3"> 
   <h1>Yhteydenottopyyntö</h1>
   
   <div class="left">
@@ -23,8 +57,7 @@ include 'headers.php';
       <li>Alla olevalla lomakkeella</li>
     </ul>
 
-   
-    <form action="/submit-form" method="post">
+    <form action="" method="post">
       <div class="row mb-3"> 
         <label for="name" class="col-sm-2 col-form-label">Nimi:</label>
         <div class="col-sm-10">
