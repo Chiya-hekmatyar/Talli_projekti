@@ -4,22 +4,69 @@
 $title = "Yhteydenottopyyntö";
 $css = "yhteystiedot.css";
 
-$servername = "datasql7.westeurope.cloudapp.azure.com?sslmode=require";
-$username = "hekmatyarch";
-$password = "73711"; 
-$dbname = "app_db";
+// Display all PHP errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+$servername = "datasql7.westeurope.cloudapp.azure.com"; // Your server name
+$username = "hekmatyarch"; // Your username
+$password = "73711"; // Your password
+$dbname = "app_db"; // Your database name
 
 include 'headers.php';
 
+// Form submission handling
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+    // Debug: Check if form data is received
+    echo "Name: " . htmlspecialchars($name) . "<br>";
+    echo "Email: " . htmlspecialchars($email) . "<br>";
+    echo "Message: " . htmlspecialchars($message) . "<br>";
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    // Create a connection to the database
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 20); // Set a connection timeout
+
+    // Check connection
+    if ($conn->connect_error) {
+        error_log("Connection failed: " . $conn->connect_error);
+        echo "<script>console.error('Database connection failed: " . $conn->connect_error . "');</script>";
+        die("Connection failed: " . $conn->connect_error);  // Stop execution on connection failure
+    } else {
+        echo "<script>console.log('Database connected successfully!');</script>";
+    }
+
+    // Prepare the SQL statement with placeholders
+    $stmt = $conn->prepare("INSERT INTO contact_requests (name, email, message) VALUES (?, ?, ?)");
+
+    if (!$stmt) {
+        error_log("Prepare failed: " . $conn->error);
+        echo "<script>console.error('Prepare statement failed: " . $conn->error . "');</script>";
+        die("Prepare failed: " . $conn->error);
+    }
+
+    // Bind parameters (s = string, for name, email, and message)
+    $stmt->bind_param("sss", $name, $email, $message);
+    
+    // Execute the statement
+    if ($stmt->execute()) {
+        echo "<script>console.log('Form submitted successfully');</script>";
+        echo "<p>Yhteydenottopyyntö on lähetetty onnistuneesti!</p>";
+    } else {
+        error_log("Execution failed: " . $stmt->error);
+        echo "<script>console.error('Execution failed: " . $stmt->error . "');</script>";
+        echo "<p>Virhe: " . $stmt->error . "</p>";
+    }
+
+    // Close the statement and connection
+    $stmt->close();
+    $conn->close();
 }
-echo "Connected successfully";
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
