@@ -22,19 +22,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Check connection
     if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+        // Log the error to the server log
+        error_log("Connection failed: " . $conn->connect_error);
+        // Echo a JavaScript snippet that logs the error to the browser console
+        echo "<script>console.error('Database connection failed: " . $conn->connect_error . "');</script>";
+        die("Connection failed: " . $conn->connect_error);  // Stop execution on connection failure
     }
     
     // Prepare the SQL statement with placeholders
     $stmt = $conn->prepare("INSERT INTO contact_requests (name, email, message) VALUES (?, ?, ?)");
+    
+    // Check if prepare failed
+    if (!$stmt) {
+        error_log("Prepare failed: " . $conn->error);
+        echo "<script>console.error('Prepare statement failed: " . $conn->error . "');</script>";
+        die("Prepare failed: " . $conn->error);
+    }
     
     // Bind parameters (s = string, for name, email, and message)
     $stmt->bind_param("sss", $name, $email, $message);
     
     // Execute the statement
     if ($stmt->execute()) {
+        // Log success message to console
+        echo "<script>console.log('Form submitted successfully');</script>";
         echo "<p>Yhteydenottopyyntö on lähetetty onnistuneesti!</p>";
     } else {
+        // Log the error to the server log and console
+        error_log("Execution failed: " . $stmt->error);
+        echo "<script>console.error('Execution failed: " . $stmt->error . "');</script>";
         echo "<p>Virhe: " . $stmt->error . "</p>";
     }
     
@@ -48,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="content container mt-5 pt-4"> 
   <h1>Yhteydenottopyyntö</h1>
   
-  <div class="left">
+  <div>
     <h2>Ota yhteyttä</h2>
     <p>Voit ottaa meihin yhteyttä</p>
     <ul>
