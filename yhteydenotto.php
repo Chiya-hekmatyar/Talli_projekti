@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = "datasql7.westeurope.cloudapp.azure.com";
+$servername = "datasql7.westeurope.cloudapp.azure.com?sslmode=require";
 $username = "hekmatyarch";
 $password = "73711"; 
 $dbname = "app_db";
