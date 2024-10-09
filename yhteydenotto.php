@@ -3,6 +3,12 @@
 <?php
 $title = "Yhteydenottopyyntö";
 $css = "yhteystiedot.css";
+
+// Display all PHP errors
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $servername = "datasql7.westeurope.cloudapp.azure.com";
 $username = "hekmatyarch";
 $password = "73711"; 
@@ -17,6 +23,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
     
+    // Debug: Check if form data is received
+    echo "Name: " . $name . "<br>";
+    echo "Email: " . $email . "<br>";
+    echo "Message: " . $message . "<br>";
+
     // Create a connection to the database
     $conn = new mysqli($servername, $username, $password, $dbname);
     
@@ -24,31 +35,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($conn->connect_error) {
         // Log the error to the server log
         error_log("Connection failed: " . $conn->connect_error);
-        // Echo a JavaScript snippet that logs the error to the browser console
         echo "<script>console.error('Database connection failed: " . $conn->connect_error . "');</script>";
         die("Connection failed: " . $conn->connect_error);  // Stop execution on connection failure
+    } else {
+        echo "Database connected successfully!";
     }
     
     // Prepare the SQL statement with placeholders
     $stmt = $conn->prepare("INSERT INTO contact_requests (name, email, message) VALUES (?, ?, ?)");
-    
-    // Check if prepare failed
+
     if (!$stmt) {
         error_log("Prepare failed: " . $conn->error);
         echo "<script>console.error('Prepare statement failed: " . $conn->error . "');</script>";
         die("Prepare failed: " . $conn->error);
     }
-    
+
     // Bind parameters (s = string, for name, email, and message)
     $stmt->bind_param("sss", $name, $email, $message);
     
     // Execute the statement
     if ($stmt->execute()) {
-        // Log success message to console
         echo "<script>console.log('Form submitted successfully');</script>";
         echo "<p>Yhteydenottopyyntö on lähetetty onnistuneesti!</p>";
     } else {
-        // Log the error to the server log and console
         error_log("Execution failed: " . $stmt->error);
         echo "<script>console.error('Execution failed: " . $stmt->error . "');</script>";
         echo "<p>Virhe: " . $stmt->error . "</p>";
