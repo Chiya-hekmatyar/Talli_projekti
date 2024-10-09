@@ -12,11 +12,6 @@ $dbname = "app_db";
 include 'headers.php';
 
 
-$servername = "datasql7.westeurope.cloudapp.azure.com";
-$username = "hekmatyarch";
-$password = "73711";
-$dbname = "db04";
-
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
