@@ -9,7 +9,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = "datasql7.westeurope.cloudapp.azure.com";
+$servername = "http://datasql7.westeurope.cloudapp.azure.com:8081/index.php?route=/&route=%2F&server=4";
 $username = "hekmatyarch";
 $password = "73711"; 
 $dbname = "app_db";
@@ -30,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Create a connection to the database
     $conn = new mysqli($servername, $username, $password, $dbname);
-    
+    $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 20); // 20 seconds
+
     // Check connection
     if ($conn->connect_error) {
         // Log the error to the server log
