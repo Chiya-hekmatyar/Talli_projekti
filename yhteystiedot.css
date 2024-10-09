@@ -20,11 +20,7 @@ body {
         margin-left: auto;
         }
   }
-  
-  .content {
-    min-height: calc(69vh); 
-    padding-top: 80px;
-}
+
   
   .left {
     padding-left: 20px;
