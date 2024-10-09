@@ -6,7 +6,7 @@ $css = "yhteystiedot.css";
 $servername = "datasql7.westeurope.cloudapp.azure.com";
 $username = "hekmatyarch";
 $password = "73711"; 
-$dbname = "db04";
+$dbname = "app_db";
 
 include 'headers.php';
 
