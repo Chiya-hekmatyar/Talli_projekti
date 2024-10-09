@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <body>
 <?php include 'navigointi.html'; ?>  
-<div class="content container mt-3"> 
+<div class="content container mt-5"> 
   <h1>Yhteydenottopyyntö</h1>
   
   <div class="left">
