@@ -1,4 +1,4 @@
-const projekti = "azuretesti"
+const projekti = "projekti"
 document.addEventListener('DOMContentLoaded', function () {
   // Get the current page URL
   var currentPage = window.location.pathname.split('/').pop();
@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
       'index.php': 'nav-home',
       'koulutukset.php': 'nav-koulutukset',
       'yhteydenotto.php': 'nav-yhteydenotto',
-      'rekisteroityminen.php': 'nav-rekisteroityminen'
+      'rekisteroityminen.php': 'nav-rekisteroityminen',
+      'login.php': 'nav-kirjaudu'
   };
 
   // Remove 'active' class from all nav links

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <?php
+session_start();
 $title = "koulutukset";
 $css = "koulutukset.css";
 include 'headers.php';
 ?>
 <body>
-<?php include 'navigointi.html'; ?>  
+<?php include 'navigointi.php'; ?>  
 
 <div class="content">
   <div class="container">
@@ -14,7 +15,7 @@ include 'headers.php';
     <p>Tässä ovat Tallin tarjoamat koulutukset ja kurssit.</p>
 
     <div class="row">
-      <h2 class="left">Koulutuksia</h2>
+      <h2>Koulutuksia</h2>
       
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="card h-100">

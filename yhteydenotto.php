@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
+session_start();
 $title = "Yhteydenottopyyntö";
 $css = "yhteystiedot.css";
 
@@ -9,39 +10,34 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-$servername = "datasql7.westeurope.cloudapp.azure.com"; // Your server name
-$username = "hekmatyarch"; // Your username
-$password = "73711"; // Your password
-$dbname = "app_db"; // Your database name
+$servername = "localhost";
+$username = "root";
+$password = ""; 
+$dbname = "app_db";
 
 include 'headers.php';
 
-// Form submission handling
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
+    
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
 
-    // Debug: Check if form data is received
-    echo "Name: " . htmlspecialchars($name) . "<br>";
-    echo "Email: " . htmlspecialchars($email) . "<br>";
-    echo "Message: " . htmlspecialchars($message) . "<br>";
-
-    // Create a connection to the database
+   
     $conn = new mysqli($servername, $username, $password, $dbname);
-    $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 20); // Set a connection timeout
+    $conn->options(MYSQLI_OPT_CONNECT_TIMEOUT, 20); 
 
-    // Check connection
+   
     if ($conn->connect_error) {
         error_log("Connection failed: " . $conn->connect_error);
         echo "<script>console.error('Database connection failed: " . $conn->connect_error . "');</script>";
-        die("Connection failed: " . $conn->connect_error);  // Stop execution on connection failure
+        die("Connection failed: " . $conn->connect_error);  
     } else {
         echo "<script>console.log('Database connected successfully!');</script>";
     }
 
-    // Prepare the SQL statement with placeholders
+   
     $stmt = $conn->prepare("INSERT INTO contact_requests (name, email, message) VALUES (?, ?, ?)");
 
     if (!$stmt) {
@@ -50,10 +46,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Prepare failed: " . $conn->error);
     }
 
-    // Bind parameters (s = string, for name, email, and message)
+  
     $stmt->bind_param("sss", $name, $email, $message);
     
-    // Execute the statement
+    
     if ($stmt->execute()) {
         echo "<script>console.log('Form submitted successfully');</script>";
         echo "<p>Yhteydenottopyyntö on lähetetty onnistuneesti!</p>";
@@ -63,24 +59,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<p>Virhe: " . $stmt->error . "</p>";
     }
 
-    // Close the statement and connection
     $stmt->close();
     $conn->close();
 }
 ?>
 <body>
-<?php include 'navigointi.html'; ?>  
+<?php include 'navigointi.php'; ?>  
 <div class="content container mt-5 pt-4"> 
   <h1>Yhteydenottopyyntö</h1>
   
   <div>
     <h2>Ota yhteyttä</h2>
-    <p>Voit ottaa meihin yhteyttä</p>
-    <ul>
-      <li>Puhelimitse yksittäisiin myymälöihin</li>
-      <li>Sähköpostitse: <a href="mailto:asiakaspalvelu@talli.fi">asiakaspalvelu@talli.fi</a></li>
-      <li>Alla olevalla lomakkeella</li>
-    </ul>
+    <p>Voit ottaa meihin yhteyttä alla olevalla lomakkeella pyrimme ottamaan yhteyttä mahdollisimman pian</p>
+
 
     <form action="" method="post">
       <div class="row mb-3"> 

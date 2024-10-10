@@ -1,70 +1,103 @@
 <?php
-//Import PHPMailer classes into the global namespace
-//These must be at the top of your script, not inside a function
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-//Load Composer's autoloader
+
 require 'vendor/autoload.php';
 
+
+$servername = "localhost"; 
+$username = "root"; 
+$password = ""; 
+$dbname = "app_db"; 
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Debug: Check submitted form data
+    
     echo '<pre>';
     print_r($_POST);
     echo '</pre>';
 
-    // Get form data and validate it
-    $sahkoposti= $_POST['sahkoposti'] ?? ''; // Get the email or an empty string if it's not set
-    
-
-    // Validate recipient email
-    if (!empty($sahkoposti) && filter_var($sahkoposti, FILTER_VALIDATE_EMAIL)) {
-        // Create an instance of PHPMailer
-        $mail = new PHPMailer(true);
-
-
-
-try {
+  
     $nimi = $_POST['nimi'];
-   
-
-    //Server settings
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'sandbox.smtp.mailtrap.io';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'b5d4fc4458fd21';                     //SMTP username
-    $mail->Password   = 'bd1fdfd53d1005';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            //Enable implicit TLS encryption
-    $mail->Port       = 2525;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-    //Recipients
-    $mail->setFrom(address:'talli@gmail.com', name:'Mailer');
-    $mail->addAddress($sahkoposti);     //Add a recipient
-   
-
+    $katuosoite = $_POST['katuosoite'];
+    $postinumero = $_POST['postinumero'];
+    $kaupunki = $_POST['kaupunki'];
+    $puhelinnumero = $_POST['puhelinnumero'];
+    $sahkoposti = $_POST['sahkoposti'];
+    $salasana = $_POST['salasana'];
+    $salasana2 = $_POST['salasana2']; 
  
 
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Talli rekistoroityminen';
-    $mail->Body    = '<html><body><h1>Talli rekistoroityminen</h1>
-    <p>Tervetuluo '.$nimi.' Talliin klikkaa alla olevaa linkkia valitsemaan koulutuksen ja hauskaa opiskelua</p>
-    <p href="https://hekmatyarch-hxayb4dxd0dhdkan.westeurope-01.azurewebsites.net/koulutukset.php">klikkaa tasta</p></body></html>';
-   
+    if (!empty($sahkoposti) && filter_var($sahkoposti, FILTER_VALIDATE_EMAIL)) {
+      
+        $mail = new PHPMailer(true);
 
-    
-    $mail->send();
-    echo 'Message has been sent to ' . $sahkoposti;
-    header('Location: index.php');
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
+        try {
+            $mail->isSMTP(); 
+            $mail->Host = 'sandbox.smtp.mailtrap.io'; 
+            $mail->SMTPAuth = true; 
+            $mail->Username = 'b5d4fc4458fd21'; 
+            $mail->Password = 'bd1fdfd53d1005'; 
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 2525; 
+
+         
+            $mail->setFrom('talli@gmail.com', 'Mailer');
+            $mail->addAddress($sahkoposti); 
+
+
+            $mail->isHTML(true); 
+            $mail->Subject = 'Talli rekistoroityminen';
+            $mail->Body = '<html><body><h1>Talli rekistoroityminen</h1>
+            <p>Tervetuloa ' . htmlspecialchars($nimi) . ' Talliin. Klikkaa alla olevaa linkkiä valitsemaan koulutuksen ja hauskaa opiskelua.</p>
+            <p><a href="https://hekmatyarch-hxayb4dxd0dhdkan.westeurope-01.azurewebsites.net/koulutukset.php">Klikkaa tästä</a></p></body></html>';
+
+            $mail->send();
+            echo 'Message has been sent to ' . htmlspecialchars($sahkoposti);
+
+          
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+           
+            if ($conn->connect_error) {
+                error_log("Connection failed: " . $conn->connect_error);
+                echo "<script>console.error('Database connection failed: " . $conn->connect_error . "');</script>";
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+          
+            $stmt = $conn->prepare("INSERT INTO users (nimi, katuosoite, postinumero, kaupunki, puhelinnumero, sahkoposti, salasana) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            if (!$stmt) {
+                error_log("Prepare failed: " . $conn->error);
+                echo "<script>console.error('Prepare statement failed: " . $conn->error . "');</script>";
+                die("Prepare failed: " . $conn->error);
+            }
+
+         
+            $stmt->bind_param("sssssss", $nimi, $katuosoite, $postinumero, $kaupunki, $puhelinnumero, $sahkoposti, $salasana);
+
+     
+            if ($stmt->execute()) {
+                echo "<p>Data saved to the database successfully!</p>";
+            } else {
+                error_log("Execution failed: " . $stmt->error);
+                echo "<script>console.error('Execution failed: " . $stmt->error . "');</script>";
+                echo "<p>Database error: " . $stmt->error . "</p>";
+            }
+
+         
+            $stmt->close();
+            $conn->close();
+            header('Location: index.php');
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+    } else {
+        echo 'Invalid email address.';
+    }
 } else {
-echo 'Invalid email address.';
-}
-} else {
-echo 'Form not submitted correctly.';
+    echo 'Form not submitted correctly.';
 }
 ?>

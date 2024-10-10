@@ -1,14 +1,12 @@
 <?php
 $title = "Rekisteröityminen";
 $css = "rekisteroituminen.css";
-$servername = " datasql7.westeurope.cloudapp.azure.com";
-$username = "hekmatyarch";
-$password = "73711"; 
-$dbname = "db04";
+
 include "headers.php";
+
 ?>
 <body>
-<?php include "navigointi.html"; ?>
+<?php include "navigointi.php"; ?>
 <div class="container mt-5 pt-4">
 <h2>Rekisteröityminen Tallin koulutuksiin</h2>
 <form action="sendmail.php" method="POST" class="needs-validation" novalidate>
@@ -22,14 +20,14 @@ include "headers.php";
 
     <div class="form-group col-sm-6">
     <label for="katuosoite" class="label-responsive form-label-sm">Katuosoite:</label>
-    <input type="text" class="form-control" id="katuosoite" title="Kirjoita katuosoitteesi" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
+    <input type="text" class="form-control" id="katuosoite" name="katuosoite" title="Kirjoita katuosoitteesi" pattern="[A-ZÅÄÖa-zåäö0-9 \-]*" required>
     <div class="invalid-feedback">Anna katuosoite</div>
     </div>
     
 
     <div class="form-group col-sm-6">
     <label for="postinumero" class="label-responsive form-label-sm">Postinumero:</label>
-    <input type="text" class="form-control" id="postinumero" title="Kirjoita postinumerosi" pattern="\d{5}" required>
+    <input type="text" class="form-control" id="postinumero" name="postinumero" title="Kirjoita postinumerosi" pattern="\d{5}" required>
     <div class="invalid-feedback">Anna postinumer vain 5 numeroa</div>
     </div>
     
@@ -355,7 +353,7 @@ include "headers.php";
 
     <div class="form-group col-sm-6">
     <label for="puhelinnumero" class="label-responsive form-label-sm">Puhelinnumero:</label>
-    <input type="text" class="form-control" id="puhelinnumero" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
+    <input type="text" class="form-control" id="puhelinnumero" name="puhelinnumero" pattern="(\+?\d{1,3}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}[- ]?)?(\d{1,4}){1,15}" required>
     <div class="invalid-feedback">Anna puhelinnumero</div>
     </div>
     
@@ -369,19 +367,19 @@ include "headers.php";
   
     <div class="form-group col-sm-6">
     <label for="salasana" class="label-responsive form-label-sm">Salasana:</label>
-    <input type="password" class="form-control" id="salasana" minlength="12" required>
+    <input type="password" class="form-control" id="salasana" name="salasana" minlength="12" required>
     <div class="invalid-feedback">Kirjoita salasane vähintään 12 merkkiä</div>
     </div>
     
  
     <div class="form-group col-sm-6">
     <label for="salasana2" class="label-responsive form-label-sm">Salasana uudestaan:</label>
-    <input type="password" class="form-control" id="salasana2" minlength="12" required>
+    <input type="password" class="form-control" id="salasana2" name="salasana2" minlength="12" required>
     <div class="invalid-feedback">Toista salasana</div>
   </div>
   
 
-  <button type="submit" name="submitcontract" class="btn btn-primary mt-3">Submit</button>
+  <button type="submit" name="submitcontract" class="btn btn-primary mt-3">Rekisteröidy</button>
     
 </form>
 </div>
